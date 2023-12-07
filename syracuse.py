@@ -5,10 +5,10 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("queryType")
 parser.add_argument("number")
-parser.add_argument("GraphType")
+#parser.add_argument("GraphType")
 args= parser.parse_args()
 
-def syracuseUntil(choix, GraphType):
+def syracuseUntil(choix):
     #if choix==1:
     #    depart = int(input("quel depart specifique? "))
     #else:
@@ -110,7 +110,7 @@ def syracuseUntil(choix, GraphType):
     print("La chaine la plus longue est de ", longueur, " atteinte par la chaine ", respLongueur)
 
 #choisis = int(input("voulez vous un certain depart (1) ou une liste jusqu'a (2)?  "))
-syracuseUntil(int(args.queryType),str(args.GraphType))
+syracuseUntil(int(args.queryType))
 
 
 
