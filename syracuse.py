@@ -70,7 +70,7 @@ def syracuseUntil(choix):
         #if incomplete==True:
             #print("valeur skip chiale :):):):):):) ")
         #else:
-        print("le depart ", valeur, " a ", it, " iterations, et un sommet ", Sommet, " soit un ratio de ", ratio, " \n")
+        print("le depart ", cleanNumber(str(valeur)), " a ", it, " iterations, et un sommet ", cleanNumber(str(int(Sommet))), " soit un ratio de ", ratio, " \n")
         if Sommet>=maxGlobal:
             maxGlobal=Sommet
             itMax=itSommetLoc
