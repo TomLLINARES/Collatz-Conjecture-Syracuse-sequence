@@ -1,4 +1,9 @@
 import time
+
+
+def cleanNumber(s):
+    return ' '.join([s[max(i-3, 0):i] for i in range(len(s), 0, -3)][::-1])
+
 def syracuseUntil(choix):
     if choix==1:
         depart = int(input("quel depart specifique? "))
@@ -10,6 +15,7 @@ def syracuseUntil(choix):
     longueur = 0
     respLongueur = 0
     listechiffre= []
+    casseToi = False
     for i in range(1,depart):
         chiffre = i
         valeur = i
@@ -60,7 +66,15 @@ def syracuseUntil(choix):
         #else:
             #print("le depart ", i, " a deja ete vu et donc skip \n")
     print("=========================================================================================== \n")
-    print("La valeur la plus haute atteinte est de ", maxGlobal, "atteinte a la ", itMax,"eme iteration de la chaine de depart", respSommet, "\n")
+    tmpMax = int(maxGlobal)
+    maxGlobalTxt = str(tmpMax)
+    maxGlobalTxt = cleanNumber(maxGlobalTxt)
+    
+    tmpSommet = int(respSommet)
+    respSommetTxt = str(tmpSommet)
+    respSommetTxt = cleanNumber(respSommetTxt)
+
+    print("La valeur la plus haute atteinte est de ", maxGlobalTxt, " atteinte a la ", itMax,"eme iteration de la chaine de depart ", respSommetTxt, "\n")
     print("La chaine la plus longue est de ", longueur, " atteinte par la chaine ", respLongueur)
 
 choisis = int(input("voulez vous un certain depart (1) ou une liste jusqu'a (2)?  "))
