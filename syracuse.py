@@ -8,6 +8,9 @@ parser.add_argument("number")
 #parser.add_argument("GraphType")
 args= parser.parse_args()
 
+def cleanNumber(s):
+    return ' '.join([s[max(i-3, 0):i] for i in range(len(s), 0, -3)][::-1])
+
 def syracuseUntil(choix):
     #if choix==1:
     #    depart = int(input("quel depart specifique? "))
@@ -106,8 +109,8 @@ def syracuseUntil(choix):
         #plt.legend()
 
         plt.show()
-    print("La valeur la plus haute atteinte est de ", maxGlobal, "atteinte a la ", max(it, itMax),"eme iteration de la chaine de depart", respSommet, "\n")
-    print("La chaine la plus longue est de ", longueur, " atteinte par la chaine ", respLongueur)
+    print("La valeur la plus haute atteinte est de ", cleanNumber(str(maxGlobal)), "atteinte a la ", max(it, itMax),"eme iteration de la chaine de depart", cleanNumber(str(respSommet)), "\n")
+    print("La chaine la plus longue est de ", longueur, " atteinte par la chaine ", cleanNumber(str(respLongueur)))
 
 #choisis = int(input("voulez vous un certain depart (1) ou une liste jusqu'a (2)?  "))
 syracuseUntil(int(args.queryType))
